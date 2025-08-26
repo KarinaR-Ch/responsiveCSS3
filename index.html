@@ -4,7 +4,90 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Module 2 Solution</title>
-    <link rel="stylesheet" href="./index.css">
+    <style>
+        * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    color: #333;
+    padding: 15px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 1.75em; /* 75% larger than section text */
+}
+
+.container {
+    width: 100%;
+}
+
+.section {
+    position: relative;
+    background-color: #f0f0f0;
+    border: 1px solid black;
+    margin: 15px;
+    padding: 15px;
+    padding-top: 45px; /* Push content down to avoid title overlap */
+}
+
+.section-title {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 5px 30px;
+    border-left: 1px solid black;
+    border-bottom: 1px solid black;
+    font-size: 1.25em; /* 25% larger than section text */
+}
+
+#chicken .section-title {
+    background-color: #ff9999;
+}
+
+#beef .section-title {
+    background-color: #cc0000;
+    color: white;
+}
+
+#sushi .section-title {
+    background-color: #ffff99;
+}
+
+/* Desktop view (992px and above) */
+@media (min-width: 992px) {
+    .section {
+        float: left;
+        width: calc(33.33% - 30px); /* Equal width with margins accounted for */
+    }
+}
+
+/* Tablet view (between 768px and 991px) */
+@media (min-width: 768px) and (max-width: 991px) {
+    #chicken, #beef {
+        float: left;
+        width: calc(50% - 30px); /* Half width with margins accounted for */
+    }
+    
+    #sushi {
+        clear: both;
+        width: calc(100% - 30px); /* Full width with margins accounted for */
+    }
+}
+
+/* Mobile view (767px and below) */
+@media (max-width: 767px) {
+    .section {
+        width: calc(100% - 30px); /* Full width with margins accounted for */
+    }
+}
+    </style>
 </head>
 <body>
     <h1>Our Menu</h1>
